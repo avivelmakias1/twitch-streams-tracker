@@ -14,11 +14,6 @@ export async function validateUser() {
 		"channel:read:subscriptions+user:edit"
 	);
 	window.location.replace(res.url);
-
-	// const twitchClient = TwitchClient.withClientCredentials(
-	// 	clientID,
-	// 	clientSecret
-	// );
 }
 
 export async function getUserValidationURL(
