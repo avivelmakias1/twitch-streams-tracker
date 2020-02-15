@@ -5,7 +5,7 @@ function SearchBar({ updateQuery }) {
 	const onQueryChange = e => {
 		const updatedQuery = e.target.value;
 		setQuery(updatedQuery);
-		if (updatedQuery.length > 3) {
+		if (updatedQuery.length >= 3) {
 			updateQuery(updatedQuery);
 		}
 	};

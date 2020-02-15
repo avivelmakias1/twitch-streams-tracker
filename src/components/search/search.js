@@ -7,8 +7,9 @@ import SearchResults from "./search-results";
 function Search() {
 	const { state } = useContext(store);
 	let [results, setResults] = useState([]);
-	const getQueryResults = query => {
-		searchResults(query, state.connection).then(res => setResults(res));
+	const getQueryResults = async query => {
+		const res = await searchResults(query, state.connection);
+		setResults(res);
 	};
 	return (
 		<>
