@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { store } from "../../store/store";
 import { CONNECTION_UPDATE } from "../../store/actionTypes";
 import { createTwitchConnection } from "../../services/twitch/connection";
+import { setAccessToken } from "../../services/cookies/accessToken";
 
 function Authenticator() {
 	const currentStore = useContext(store);
@@ -17,6 +18,7 @@ function Authenticator() {
 					type: CONNECTION_UPDATE,
 					connection: await createTwitchConnection(urlHash.access_token)
 				});
+				setAccessToken(urlHash.access_token);
 			}
 		}
 		createConnectionIfNeeded();
