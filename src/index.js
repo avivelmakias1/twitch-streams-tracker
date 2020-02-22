@@ -3,5 +3,10 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import App from "./components/app/app";
-
-ReactDOM.render(<App />, document.getElementById("root"));
+import { ConnectionProvider } from "./stores/connection/store";
+ReactDOM.render(
+	<ConnectionProvider>
+		<App />
+	</ConnectionProvider>,
+	document.getElementById("root")
+);
