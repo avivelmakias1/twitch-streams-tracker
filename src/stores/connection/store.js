@@ -10,7 +10,6 @@ const ConnectionProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(
 		useCallback((state, action) => {
 			if (action.type.includes("connection")) {
-				console.log("called", state, action);
 				return reducer[action.type](state, action);
 			}
 		}, []),
