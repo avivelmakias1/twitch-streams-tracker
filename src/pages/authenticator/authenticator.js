@@ -6,6 +6,7 @@ import { connectionStore } from "../../stores/connection/store";
 import { CONNECTION_UPDATE } from "../../stores/actionTypes";
 import { createTwitchConnection } from "../../services/twitch/connection";
 import { setAccessToken } from "../../services/cookies/accessToken";
+import { trackStreams } from "../../router/urls";
 
 function Authenticator() {
 	const currentStore = useContext(connectionStore);
@@ -19,7 +20,7 @@ function Authenticator() {
 					connection: await createTwitchConnection(urlHash.access_token)
 				});
 				setAccessToken(urlHash.access_token);
-				history.push("/search");
+				history.push(trackStreams);
 			}
 		}
 		createConnectionIfNeeded();
@@ -29,7 +30,7 @@ function Authenticator() {
 			<div>authenticated :)</div>
 			<button
 				onClick={() => {
-					history.push("/search");
+					history.push(trackStreams);
 				}}
 			>
 				Click here if the page doesn't redirect automaticly
