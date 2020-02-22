@@ -2,13 +2,13 @@ import React, { useEffect, useContext } from "react";
 import hash from "hash-parse";
 import { useHistory } from "react-router-dom";
 
-import { store } from "../../store/store";
-import { CONNECTION_UPDATE } from "../../store/actionTypes";
+import { connectionStore } from "../../stores/connection/store";
+import { CONNECTION_UPDATE } from "../../stores/actionTypes";
 import { createTwitchConnection } from "../../services/twitch/connection";
 import { setAccessToken } from "../../services/cookies/accessToken";
 
 function Authenticator() {
-	const currentStore = useContext(store);
+	const currentStore = useContext(connectionStore);
 	const history = useHistory();
 	useEffect(() => {
 		async function createConnectionIfNeeded() {

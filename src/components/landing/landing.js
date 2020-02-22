@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-import { store } from "../../store/store";
+import { connectionStore } from "../../stores/connection/store";
 import { validateUser } from "../../services/twitch/connection";
 
 function Landing() {
-	const { state } = useContext(store);
+	const { state } = useContext(connectionStore);
 	const history = useHistory();
 	if (state.connection) {
 		return (

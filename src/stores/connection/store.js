@@ -1,19 +1,19 @@
 import React, { createContext, useReducer } from "react";
 
-import twitchConnection from "./twitchConnection";
+import reducer from "./reducer";
 
 const initialState = { connection: null };
-const store = createContext(initialState);
-const { Provider } = store;
+const connectionStore = createContext(initialState);
+const { Provider } = connectionStore;
 
-const StateProvider = ({ children }) => {
+const ConnectionProvider = ({ children }) => {
 	const [state, dispatch] = useReducer((state, action) => {
 		if (action.type.includes("connection")) {
-			return twitchConnection[action.type](state, action);
+			return reducer[action.type](state, action);
 		}
 	}, initialState);
 
 	return <Provider value={{ state, dispatch }}>{children}</Provider>;
 };
 
-export { store, StateProvider };
+export { connectionStore, ConnectionProvider };
