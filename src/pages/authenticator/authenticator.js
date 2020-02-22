@@ -14,11 +14,12 @@ function Authenticator() {
 		async function createConnectionIfNeeded() {
 			const urlHash = hash.parse(document.location.href);
 			if (urlHash.access_token && !currentStore.state.connection) {
-				currentStore.dispatch({
+				await currentStore.dispatch({
 					type: CONNECTION_UPDATE,
 					connection: await createTwitchConnection(urlHash.access_token)
 				});
 				setAccessToken(urlHash.access_token);
+				history.push("/search");
 			}
 		}
 		createConnectionIfNeeded();
