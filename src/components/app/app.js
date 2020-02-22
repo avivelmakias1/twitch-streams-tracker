@@ -1,12 +1,16 @@
 import React from "react";
+
 import Router from "../../router/router";
+import { ConnectionProvider } from "../../stores/connection/store";
 
 import "./app.css";
 
 function App() {
 	return (
 		<div className="App">
-			<Router />
+			<ConnectionProvider>
+				<Router />
+			</ConnectionProvider>
 		</div>
 	);
 }
