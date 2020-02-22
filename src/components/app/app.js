@@ -1,7 +1,7 @@
 import React from "react";
-import Router from "./components/router/router";
+import Router from "../../router/router";
 
-import "./App.css";
+import "./app.css";
 
 function App() {
 	return (

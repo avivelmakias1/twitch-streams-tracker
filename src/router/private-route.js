@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 
-import { connectionStore } from "../../stores/connection/store";
+import { connectionStore } from "../stores/connection/store";
 
 function PrivateRoute({ children, ...rest }) {
 	const { state } = useContext(connectionStore);

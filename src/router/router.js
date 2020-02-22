@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import PrivateRoute from "./private-route";
-import Landing from "../landing/landing";
-import Authenticator from "../authenticator/authenticator";
-import Search from "../search/search";
+import Landing from "../pages/landing/landing";
+import Authenticator from "../pages/authenticator/authenticator";
+import Search from "../components/search/search";
 
 function Router() {
 	return (
