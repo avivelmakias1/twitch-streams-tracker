@@ -16,7 +16,7 @@ function TrackStreams() {
 	return (
 		<>
 			{streamers.map(streamer => {
-				return <DisplayStreamer streamer={streamer} />;
+				return <DisplayStreamer stream={streamer} />;
 			})}
 		</>
 	);
