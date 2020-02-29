@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { connectionStore } from "../../stores/connection/store";
 import { getAllLiveStreams } from "../../services/twitch/user";
-import DisplayStreamer from "../../components/streamer/displayStreamer";
+import DisplayStreamer from "../../components/stream/displayStream";
 
 function TrackStreams() {
 	const [streamers, setStreamers] = useState([]);

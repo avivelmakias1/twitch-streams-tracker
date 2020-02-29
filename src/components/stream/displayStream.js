@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./displayStreamer.css";
+import "./displayStream.css";
 
-function DisplayStreamer({ streamer }) {
+function DisplayStream({ streamer }) {
 	return (
 		<div className={"streamer"} key={streamer._data._id}>
 			<img
@@ -22,8 +22,8 @@ function DisplayStreamer({ streamer }) {
 	);
 }
 
-DisplayStreamer.propTypes = {
+DisplayStream.propTypes = {
 	streamer: PropTypes.object.isRequired
 };
 
-export default DisplayStreamer;
+export default DisplayStream;
