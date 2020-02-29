@@ -1,22 +1,22 @@
-.streamer {
+.livestreamer {
 	display: flex;
 	align-items: center;
 }
 
-.streamer > .streamer-wrapper {
+.livestreamer > .streamer-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 }
 
-.streamer > .streamer-icon {
+.livestreamer > .streamer-icon {
 	max-width: 30px;
 	max-height: 30px;
 	border-radius: 50%;
 }
 
-.streamer > .streamer-wrapper > .game {
+.livestreamer > .streamer-wrapper > .game {
 	font-size: 10px;
 	color: #333333;
 }
