@@ -5,3 +5,8 @@ export async function getFollowingChannels(twitchConnection) {
 	});
 	return await followers.getAll();
 }
+
+export async function getAllLiveStreams(twitchConnection) {
+	const livestreams = await twitchConnection.kraken.streams.getAllLiveStreams();
+	return livestreams;
+}

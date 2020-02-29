@@ -5,7 +5,7 @@ import * as urls from "./urls";
 import PrivateRoute from "./private-route";
 import Landing from "../pages/landing/landing";
 import Authenticator from "../pages/authenticator/authenticator";
-import Following from "../pages/following/following";
+import TrackStreams from "../pages/trackStreams/trackStreams";
 
 function Router() {
 	return (
@@ -15,7 +15,7 @@ function Router() {
 					<Authenticator />
 				</Route>
 				<PrivateRoute path={urls.trackStreams}>
-					<Following />
+					<TrackStreams />
 				</PrivateRoute>
 				<Route path={urls.landing}>
 					<Landing />
