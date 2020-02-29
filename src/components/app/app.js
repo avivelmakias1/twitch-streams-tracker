@@ -16,7 +16,7 @@ function App() {
 				await createConnection(access_token, store);
 			}
 		})();
-	});
+	}, [store]);
 	return (
 		<div className="App">
 			<Router />
