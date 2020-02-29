@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import * as urls from "./urls";
-import PrivateRoute from "./private-route";
+import PrivateRoute from "./privateRoute";
 import Landing from "../pages/landing/landing";
 import Authenticator from "../pages/authenticator/authenticator";
 import TrackStreams from "../pages/trackStreams/trackStreams";
