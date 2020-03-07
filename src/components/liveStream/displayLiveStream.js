@@ -12,12 +12,23 @@ function DisplayLiveStream({ liveStream }) {
 				className={"streamer-icon"}
 			/>
 			<div className={"streamer-wrapper"}>
-				<span className={"streamer-name"}>
-					{liveStream._data.channel.display_name}
-				</span>
-				<span className={"game"}>{liveStream._data.game}</span>
+				<div className={"name"}>{liveStream._data.channel.display_name}</div>
+				<div className={"game"}>{liveStream._data.game}</div>
 			</div>
-			<div className={liveStream._data.stream_type && ""}></div>
+			<div className={"stream-metadata"}>
+				<div className={"live-status"}>
+					{liveStream._data.stream_type === "live" ? (
+						<>
+							<div className={liveStream._data.stream_type}></div>
+							<span className={"viewers-count"}>
+								{liveStream._data.viewers}
+							</span>
+						</>
+					) : (
+						<span>Offline</span>
+					)}
+				</div>
+			</div>
 		</div>
 	);
 }
