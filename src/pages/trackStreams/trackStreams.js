@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { connectionStore } from "../../stores/connection/store";
-import { getAllLiveStreams } from "../../services/twitch/user";
+import { getFollowingLiveStreams } from "../../services/twitch/user";
 import DisplayStreams from "../../components/liveStreams/displayLiveStreams";
 
 function TrackStreams() {
@@ -9,7 +9,7 @@ function TrackStreams() {
 	const { state } = useContext(connectionStore);
 	useEffect(() => {
 		const getStreamers = async () => {
-			setLiveStreamers(await getAllLiveStreams(state.connection));
+			setLiveStreamers(await getFollowingLiveStreams(state.connection));
 		};
 		getStreamers();
 	}, [state.connection]);

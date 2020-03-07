@@ -11,7 +11,7 @@ export async function validateUser() {
 		clientID,
 		"http://localhost:3000/auth/twitch/callback",
 		"token",
-		"channel:read:subscriptions+user:edit+user:read:email"
+		"channel:read:subscriptions+user:edit+user_read"
 	);
 	window.location.replace(res.url);
 }
