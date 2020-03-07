@@ -7,7 +7,7 @@ function DisplayLiveStreams({ liveStreams }) {
 	const [sortedStreams, setSortedStreams] = useState([]);
 	useEffect(() => {
 		setSortedStreams(
-			liveStreams.sort((a, b) => a._data.viewers > b._data.viewers)
+			liveStreams.sort((a, b) => a._data.viewers < b._data.viewers)
 		);
 	}, [liveStreams]);
 	return (
