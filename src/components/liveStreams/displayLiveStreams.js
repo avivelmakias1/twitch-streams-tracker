@@ -13,15 +13,15 @@ function DisplayLiveStreams({ liveStreams }) {
 	return (
 		<>
 			{sortedStreams &&
-				sortedStreams.map(liveStream => {
-					return <DisplayStreamer liveStream={liveStream} />;
+				sortedStreams.map((liveStream, index) => {
+					return <DisplayStreamer key={index} liveStream={liveStream} />;
 				})}
 		</>
 	);
 }
 
 DisplayLiveStreams.propTypes = {
-	liveStreams: PropTypes.object.isRequired
+	liveStreams: PropTypes.array.isRequired
 };
 
 export default DisplayLiveStreams;
