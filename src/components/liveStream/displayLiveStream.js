@@ -2,11 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import approximate from "approximate-number";
 
+import { openURLInNewWindow } from "../../services/web/links";
 import "./displayLiveStream.css";
 
 function DisplayLiveStream({ liveStream }) {
 	return (
-		<div className={"livestreamer"} key={liveStream._data._id}>
+		<div
+			className={"livestreamer"}
+			key={liveStream._data._id}
+			onClick={() => openURLInNewWindow(liveStream._data.channel.url)}
+		>
 			<img
 				src={liveStream._data.channel.logo}
 				alt={"streamer icon"}
