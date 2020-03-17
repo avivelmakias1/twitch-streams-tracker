@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import approximate from "approximate-number";
 
 import "./displayLiveStream.css";
 
@@ -21,7 +22,7 @@ function DisplayLiveStream({ liveStream }) {
 						<>
 							<div className={liveStream._data.stream_type}></div>
 							<span className={"viewers-count"}>
-								{liveStream._data.viewers}
+								{approximate(liveStream._data.viewers)}
 							</span>
 						</>
 					) : (
