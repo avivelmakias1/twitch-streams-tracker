@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import * as urls from "./urls";
-import PrivateRoute from "./private-route";
+import PrivateRoute from "./privateRoute";
 import Landing from "../pages/landing/landing";
 import Authenticator from "../pages/authenticator/authenticator";
-import Search from "../components/search/search";
+import TrackStreams from "../pages/trackStreams/trackStreams";
 
 function Router() {
 	return (
@@ -15,7 +15,7 @@ function Router() {
 					<Authenticator />
 				</Route>
 				<PrivateRoute path={urls.trackStreams}>
-					<Search />
+					<TrackStreams />
 				</PrivateRoute>
 				<Route path={urls.landing}>
 					<Landing />

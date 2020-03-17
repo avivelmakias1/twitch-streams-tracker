@@ -1,0 +1,60 @@
+.livestreamer {
+	display: flex;
+	align-items: flex-start;
+}
+
+.livestreamer > .streamer-icon {
+	max-width: 30px;
+	max-height: 30px;
+	border-radius: 50%;
+}
+
+.livestreamer > .streamer-wrapper {
+	width: 130px;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	margin-left: 7px;
+}
+
+.livestreamer > .streamer-wrapper > .name {
+	width: inherit;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.livestreamer > .streamer-wrapper > .game {
+	width: inherit;
+	display: block;
+	font-size: 10px;
+	color: #333333;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.livestreamer > .stream-metadata {
+	margin-left: 5px;
+	display: flex;
+}
+
+.livestreamer > .stream-metadata > .live-status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.livestreamer > .stream-metadata > .live-status > .live {
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: red;
+}
+
+.livestreamer > .stream-metadata > .live-status > .viewers-count {
+	font-size: 14px;
+}
