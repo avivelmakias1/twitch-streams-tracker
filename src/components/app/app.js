@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from "react";
 import Router from "../../router/router";
 import { connectionStore } from "../../stores/connection/store";
 import { createConnection } from "../../services/authentication/authentication";
-import { getAccessToken } from "../../services/cookies/accessToken";
+import { getAccessToken } from "../../services/web/cookies";
 
 import "./app.css";
 

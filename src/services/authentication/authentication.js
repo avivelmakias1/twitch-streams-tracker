@@ -1,6 +1,6 @@
 import { CONNECTION_UPDATE } from "../../stores/actionTypes";
 import { createTwitchConnection } from "../../services/twitch/connection";
-import { setAccessToken } from "../../services/cookies/accessToken";
+import { setAccessToken } from "../../services/web/cookies";
 
 export const createConnection = async (access_token, store) => {
 	if (access_token && !store.state.connection) {
