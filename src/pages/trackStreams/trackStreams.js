@@ -8,15 +8,17 @@ function TrackStreams() {
 	const [liveStreamers, setLiveStreamers] = useState([]);
 	const { state } = useContext(connectionStore);
 	useEffect(() => {
-		const getStreamers = async () => {
-			if (!document.hidden) {
+		const getStreamersIfPageIsVisible = async () => {
+			if (!document.hidden)
 				setLiveStreamers(await getFollowingLiveStreams(state.connection));
-			}
 		};
-		getStreamers();
-		window.addEventListener("visibilitychange", () => getStreamers());
+		getStreamersIfPageIsVisible();
+		window.addEventListener("visibilitychange", getStreamersIfPageIsVisible);
 		return () => {
-			window.removeEventListener("visibilitychange", getStreamers);
+			window.removeEventListener(
+				"visibilitychange",
+				getStreamersIfPageIsVisible
+			);
 		};
 	}, [state.connection]);
 	return (
